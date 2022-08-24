@@ -21,4 +21,13 @@ RSpec.describe ArtistRepository do
       expect(albums.first.genre).to eq 'Rock'
     end
   end
+
+  describe "#find" do
+    it "returns a specific artist" do
+      repo = ArtistRepository.new
+      artist1 = repo.find(1)
+      expect(artist1.name).to eq 'Pixies'
+      expect(artist1.genre).to eq 'Rock'
+    end
+  end
 end
